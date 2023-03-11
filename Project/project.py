@@ -11,7 +11,7 @@ STOPLIST =[".", "end", "close","exit","bye","good bye"]
 users = []
 
 def verificate_email(text:str):
-    email_re = re.findall(r"[\w+3\@{1}\w+\.\w+]", text)
+    email_re = re.findall(r"\w+3\@{1}\w+\.\w+", text)
     email = "".join(email_re)
     if bool(email) == True:
         return email
@@ -29,7 +29,7 @@ def verificate_birthday(text:str):
 def verificate_number(num): #Done
     flag = True
     try:
-        number = re.sub(r"[\+\(\)A-Za-z\ ]", "", num)
+        number = re.sub(r"\+\(\)A-Za-z\ ", "", num)
         if len(number) == 12:
             number = "+" + number
 
